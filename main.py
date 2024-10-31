@@ -26,6 +26,7 @@ print("Image mode:", img_resized.mode)  # e.g., RGB, L (grayscale)
 
 rgb_sep = separate_rgb(transpose(map_pixels(img_resized)))
 rgb_text_list = "r_text.txt", "g_text.txt", "b_text.txt"
+clear_all(rgb_text_list)
 # for i in range(3):
 #     write_2d(rgb_text_list[i], rgb_sep[i])
 
@@ -36,10 +37,3 @@ for i in range(1):
 for i in range(1):
     new_img = Image.fromarray(np.array(transpose(separate_rgb_zeros(map_pixels(img, low_def))[i]), dtype=np.uint8), mode='RGB')
     new_img.show()
-
-# clear_all(rgb_text_list)
-#
-# arr = [['a', 'b'],['c', 'd']]
-# print(*arr, sep="\n")
-#
-# print(*transpose(arr), sep="\n")
